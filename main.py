@@ -8,6 +8,7 @@ async def on_ready():
     print('Bot is ready')
 
 @client.command()
-async def nuke(ctx):
+async def ping(ctx):
+    await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
 client.run('TOKEN')
