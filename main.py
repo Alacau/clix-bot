@@ -29,32 +29,32 @@ async def frame(ctx, *, frame):
 
     for item in warframes:
         for key in item:
-            if key == frame:
+            if key == frame and len(item[frame]) == 1:
                 build = item[frame][0].split('/')
                 build_file = build[-1]
                 build_name = build_file[:-4]
 
-                embed = discord.Embed(
-                description = '',
-                color = discord.Color.teal()
-                )
+                embed = discord.Embed(color = discord.Color.teal())
                 embed.set_author(name = build_name.upper(), icon_url = item['thumbnail'])
-                embed.set_image(url = f'{item[frame][0]}')
+                embed.set_image(url = item[frame][0])
                 embed.set_thumbnail(url = item['thumbnail'])
                 embed.add_field(name = item['author'], value = item['link'])
-                embed.set_footer(text = 'Success!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
+                embed.set_footer(text ='Success!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
+                await ctx.send(embed = embed)
 
-    if len(item[frame]) > 1:
-        for value in range(len(item[frame])):
-            build = item[frame][value].split('/')
-            build_file = build[-1]
-            build_name = build_file[:-4]
-            embed.set_author(name = build_name.upper())
-            embed.set_image(url = item[frame][value])
-            embed.set_thumbnail(url = item['thumbnail'])
-            await ctx.send(embed = embed)
-    else:
-        await ctx.send(embed = embed)
+            elif key == frame and len(item[frame]) > 1:
+                for value in range(len(item[frame])):
+                    build = item[frame][value].split('/')
+                    build_file = build[-1]
+                    build_name = build_file[:-4]
+
+                    embed = discord.Embed(color = discord.Color.teal())
+                    embed.set_author(name = build_name.upper(), icon_url = item['thumbnail'])
+                    embed.set_image(url = item[frame][value])
+                    embed.add_field(name = item['author'], value = item['link'])
+                    embed.set_thumbnail(url = item['thumbnail'])
+                    embed.set_footer(text = 'Sucess!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
+                    await ctx.send(embed = embed)
 
 #Prefixes to organize into cog
 @client.event
