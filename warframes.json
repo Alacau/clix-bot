@@ -1,9 +1,9 @@
 [
   {
-    "ash": [""],
-    "thumbnail":"",
+    "ash": ["https://cdn.discordapp.com/attachments/620077247516377100/623947156914700329/umbralash.png", "https://cdn.discordapp.com/attachments/620077247516377100/623947123481772032/speedash.png", "https://cdn.discordapp.com/attachments/620077247516377100/623947155551289345/suprisemotherfer.png"],
+    "thumbnail": "https://cdn.discordapp.com/attachments/620077247516377100/623948505899204629/ashprime.jpg",
     "author": "KnightmareFrames",
-    "link": "[]()"
+    "link": "[https://youtu.be/KiQujX-6QUo](https://youtu.be/KiQujX-6QUo)"
   },
 
   {
@@ -254,8 +254,8 @@
 
   {
     "volt": [""],
-    "thumbnail":"",
-    "author": "KnightmareFrames",s
+    "thumbnail": "",
+    "author": "KnightmareFrames",
     "link": "[]()"
   },
 
@@ -278,5 +278,5 @@
     "thumbnail":"",
     "author": "KnightmareFrames",
     "link": "[]()"
-  },
+  }
 ]
