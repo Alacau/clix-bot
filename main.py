@@ -13,16 +13,54 @@ client = commands.Bot(command_prefix = get_prefix)
 async def on_ready():
     print('Bot is ready')
 
+#TESTING AREA
 @client.command()
 async def test(ctx, *, kwarg):
     pass
+#TESTING AREA
 
+#Core to organize into cog: frame, nuke, tricap,
+@client.command()
+async def frame(ctx, *, frame):
+
+    with open('warframes.json', 'r') as f:
+        warframe = json.load(f)
+
+    build = warframe[frame][0].split('/')
+    build_file = build[-1]
+    build_name = build_file[:-4]
+
+    for value in range(len(warframe[frame])):
+        build = warframe[frame][value].split('/')
+        build_file = build[-1]
+        build_name = build_file[:-4]
+        print(build_name)
+
+    embed = discord.Embed(
+    title = f'{frame.capitalize()}',
+    description = '',
+    color = discord.Color.teal()
+    )
+    embed.set_image(url = f'{warframe[frame][0]}')
+    embed.set_footer(text = '')
+
+    if len(warframe[frame]) > 1:
+        for value in range(len(warframe[frame])):
+            build = warframe[frame][value].split('/')
+            build_file = build[-1]
+            build_name = build_file[:-4]
+            embed.set_image(url = f'{warframe[frame][value]}')
+            await ctx.send(embed = embed)
+    else:
+        await ctx.send(embed = embed)
+
+#Prefixes to organize into cog
 @client.event
 async def on_guild_join(guild):
     with open('prefixes.json', 'r') as f:
         prefixes = json.load(f)
 
-    prefixes[str(guild.id)] = "."
+    prefixes[str(guild.id)] = '.'
 
     with open('prefixes.json', 'w') as f:
         json.dump(prefixes, f, indent = 4)
@@ -43,40 +81,16 @@ async def prefix(ctx, prefix):
         prefixes = json.load(f)
 
     prefixes[str(ctx.guild.id)] = prefix
+    embed = discord.Embed(
+    title = ':white_check_mark: Success!',
+    description = f'Your prefix has been changed to `{prefix}`',
+    color = discord.Color.magenta()
+    )
 
     with open('prefixes.json', 'w') as f:
         json.dump(prefixes, f, indent = 4)
 
-    await ctx.send(f'Your prefix has been changed to {prefix}')
-
-@client.command()
-async def frame(ctx, *, frame):
-    embed = discord.Embed(
-    title = f'{frame.upper()}',
-    description = f'A basic {frame.capitalize()} build!',
-    color = discord.Color.teal()
-    )
-
-    embed.set_image(url = f'https://cutt.ly/{frame}')
-    embed.set_footer(text = f'{prefix}umbral <frame> for a stronger warframe build!')
     await ctx.send(embed = embed)
-
-@client.command()
-async def nuke(ctx, *, frame):
-    embed = discord.Embed(
-    title = 'Title',
-    description = 'Description',
-    color = discord.Color.blue()
-    )
-
-    embed.set_image(url = f'https://cutt.ly/nuke_{frame}')
-
-@client.command()
-async def pug(ctx, *, kwarg):
-    for image_file in glob.glob('png/*'):
-        file_name = image_file.split('/')[-1]
-        if file_name.startswith(f'{kwarg.lower()}'):
-            await ctx.send(file = discord.File(f'{image_file}'))
 
 
 client.run('TOKEN')
