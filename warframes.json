@@ -1,8 +1,282 @@
-{
-  "excalibur": ["https://cutt.ly/excalibur"],
-  "atlas": ["https://cutt.ly/excalibur"],
-  "mag": ["https://cutt.ly/mag"],
-  "mag_prime":["https://cutt.ly/excalibur"],
-  "volt_nuke": ["https://cutt.ly/excalibur"],
-  "nova": ["https://cdn.discordapp.com/attachments/620077247516377100/623656552489943041/speedva.png", "https://cdn.discordapp.com/attachments/620077247516377100/623655952347955200/slowva.png", "https://cdn.discordapp.com/attachments/620077247516377100/623656523381473291/rushva.png"]
-}
+[
+  {
+    "ash": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "atlas": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "banshee": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "baruuk": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "chroma": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "ember": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "equinox": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "excalibur": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "frost": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "gara": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "garuda": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+
+  {
+    "gauss": [""],
+    "thumbnail": "",
+    "author": "KnightmareFrames",
+    "link": "[link](https://www.youtube.com)"
+  },
+
+  {
+    "harrow": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "hildryn": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "hydroid": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "inaros": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "ivara": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "khora": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "limbo": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "mag": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "mesa": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "mirage": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "nekros": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "nezha": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "nidus": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "nova": ["https://cdn.discordapp.com/attachments/620077247516377100/623656552489943041/speedva.png", "https://cdn.discordapp.com/attachments/620077247516377100/623655952347955200/slowva.png", "https://cdn.discordapp.com/attachments/620077247516377100/623656523381473291/rushva.png"],
+    "thumbnail": "https://cdn.discordapp.com/attachments/620077247516377100/623681371235287070/NovaPrime.png",
+    "author": "KnightmareFrames",
+    "link": "[https://youtu.be/8ZnrAX6zblo](https://youtu.be/8ZnrAX6zblo)"
+  },
+
+  {
+    "nyx": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "oberon": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "octavia": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "revenant": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "rhino": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "saryn": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "titania": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "trinity": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "valkyr": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "vauban": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "volt": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",s
+    "link": "[]()"
+  },
+
+  {
+    "wisp": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "wukong": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+
+  {
+    "zephyr": [""],
+    "thumbnail":"",
+    "author": "KnightmareFrames",
+    "link": "[]()"
+  },
+]
