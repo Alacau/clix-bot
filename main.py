@@ -15,47 +15,43 @@ async def on_ready():
 
 #TESTING AREA
 @client.command()
-async def test(ctx, *, frame):
-    with open('test.json', 'r') as h:
-        warframes = json.load(h)
-    for item in warframes:
-        for key in item:
-            if key == frame:
-                print(item[frame][0])
+async def test():
+    pass
 #TESTING AREA
 
 #Core to organize into cog: frame, nuke, tricap,
 @client.command()
 async def frame(ctx, *, frame):
     frame = frame.lower()
-    with open('warframes.json', 'r') as f:
-        warframe = json.load(f)
 
-    with open('warframe_img.json', 'r') as g:
-        img = json.load(g)
+    with open('warframes.json', 'r') as h:
+        warframes = json.load(h)
 
-    build = warframe[frame][0].split('/')
-    build_file = build[-1]
-    build_name = build_file[:-4]
+    for item in warframes:
+        for key in item:
+            if key == frame:
+                build = item[frame][0].split('/')
+                build_file = build[-1]
+                build_name = build_file[:-4]
 
-    embed = discord.Embed(
-    description = '',
-    color = discord.Color.teal()
-    )
-    embed.set_author(name = build_name.upper(), icon_url = img[frame])
-    embed.set_image(url = f'{warframe[frame][0]}')
-    embed.set_thumbnail(url = img[frame])
-    embed.add_field(name = 'Warframe', value = frame.capitalize())
-    embed.set_footer(text = 'Got build suggestions? Send them to: EXAMPLE EMAIL', icon_url = img['choobi'])
+                embed = discord.Embed(
+                description = '',
+                color = discord.Color.teal()
+                )
+                embed.set_author(name = build_name.upper(), icon_url = item['thumbnail'])
+                embed.set_image(url = f'{item[frame][0]}')
+                embed.set_thumbnail(url = item['thumbnail'])
+                embed.add_field(name = item['author'], value = item['link'])
+                embed.set_footer(text = 'Success!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
 
-    if len(warframe[frame]) > 1:
-        for value in range(len(warframe[frame])):
-            build = warframe[frame][value].split('/')
+    if len(item[frame]) > 1:
+        for value in range(len(item[frame])):
+            build = item[frame][value].split('/')
             build_file = build[-1]
             build_name = build_file[:-4]
-            embed.set_author(name = f'{build_name.upper()}', icon_url = f'{img[frame]}')
-            embed.set_image(url = f'{warframe[frame][value]}')
-            embed.set_thumbnail(url = img[frame])
+            embed.set_author(name = build_name.upper())
+            embed.set_image(url = item[frame][value])
+            embed.set_thumbnail(url = item['thumbnail'])
             await ctx.send(embed = embed)
     else:
         await ctx.send(embed = embed)
