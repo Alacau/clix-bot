@@ -8,10 +8,11 @@ def get_prefix(client, message):
         return prefixes[str(message.guild.id)]
 
 client = commands.Bot(command_prefix = get_prefix)
+client.remove_command('help')
 
 @client.event
 async def on_ready():
-    print('READY.')
+    await client.change_presence(status = discord.Status.online, activity = discord.Game('.help'))
 
 #TESTING AREA
 @client.command()
@@ -19,7 +20,7 @@ async def test():
     pass
 #TESTING AREA
 
-#Core to organize into cog: frame, nuke, tricap,
+#Core to organize into cog: frame
 @client.command()
 async def frame(ctx, *, frame):
     frame = frame.lower()
@@ -33,13 +34,14 @@ async def frame(ctx, *, frame):
                 build = item[frame][0].split('/')
                 build_file = build[-1]
                 build_name = build_file[:-4]
+                build_name = build_name.replace('_', ' ')
 
-                embed = discord.Embed(color = discord.Color.teal())
+                embed = discord.Embed(color = discord.Color.gold())
                 embed.set_author(name = build_name.upper(), icon_url = item['thumbnail'])
                 embed.set_image(url = item[frame][0])
                 embed.set_thumbnail(url = item['thumbnail'])
                 embed.add_field(name = item['author'], value = item['link'])
-                embed.set_footer(text ='Success!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
+                embed.set_footer(text ='Suggestions at warframeclixbot@gmail.com!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
                 await ctx.send(embed = embed)
 
             elif key == frame and len(item[frame]) > 1:
@@ -47,16 +49,28 @@ async def frame(ctx, *, frame):
                     build = item[frame][value].split('/')
                     build_file = build[-1]
                     build_name = build_file[:-4]
+                    build_name = build_name.replace('_', ' ')
 
-                    embed = discord.Embed(color = discord.Color.teal())
+                    embed = discord.Embed(color = discord.Color.gold())
                     embed.set_author(name = build_name.upper(), icon_url = item['thumbnail'])
                     embed.set_image(url = item[frame][value])
                     embed.add_field(name = item['author'], value = item['link'])
                     embed.set_thumbnail(url = item['thumbnail'])
-                    embed.set_footer(text = 'Sucess!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
+                    embed.set_footer(text = 'Suggestions at warframeclixbot@gmail.com!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
                     await ctx.send(embed = embed)
 
-#Prefixes to organize into cog
+@client.command(pass_context = True)
+async def help(ctx):
+    author = ctx.message.author
+
+    embed = discord.Embed(color = discord.Color.magenta())
+
+    embed.set_author(name = 'Help Commands')
+    embed.add_field(name = '.frame <warframe>', value = 'Shows warframe builds')
+    embed.add_field(name = '.help', value = 'Shows this command')
+    await ctx.send(author, embed = embed)
+
+#PREFIX COMMANDS
 @client.event
 async def on_guild_join(guild):
     with open('prefixes.json', 'r') as f:
