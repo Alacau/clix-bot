@@ -12,6 +12,7 @@ client.remove_command('help')
 
 @client.event
 async def on_ready():
+    print('Bot is ready.')
     await client.change_presence(status = discord.Status.online, activity = discord.Game('.help'))
 
 #TESTING AREA
@@ -25,8 +26,8 @@ async def test():
 async def frame(ctx, *, frame):
     frame = frame.lower()
 
-    with open('warframes.json', 'r') as h:
-        warframes = json.load(h)
+    with open('warframes.json', 'r') as g:
+        warframes = json.load(g)
 
     for item in warframes:
         for key in item:
@@ -40,7 +41,7 @@ async def frame(ctx, *, frame):
                 embed.set_author(name = build_name.upper(), icon_url = item['thumbnail'])
                 embed.set_image(url = item[frame][0])
                 embed.set_thumbnail(url = item['thumbnail'])
-                embed.add_field(name = item['author'], value = item['link'])
+                embed.add_field(name = item['author'][0], value = item['link'][0])
                 embed.set_footer(text ='Suggestions at warframeclixbot@gmail.com!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
                 await ctx.send(embed = embed)
 
@@ -54,21 +55,19 @@ async def frame(ctx, *, frame):
                     embed = discord.Embed(color = discord.Color.gold())
                     embed.set_author(name = build_name.upper(), icon_url = item['thumbnail'])
                     embed.set_image(url = item[frame][value])
-                    embed.add_field(name = item['author'], value = item['link'])
+                    embed.add_field(name = item['author'][value], value = item['link'][value])
                     embed.set_thumbnail(url = item['thumbnail'])
                     embed.set_footer(text = 'Suggestions at warframeclixbot@gmail.com!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
                     await ctx.send(embed = embed)
 
 @client.command(pass_context = True)
 async def help(ctx):
-    author = ctx.message.author
-
     embed = discord.Embed(color = discord.Color.magenta())
 
-    embed.set_author(name = 'Help Commands')
-    embed.add_field(name = '.frame <warframe>', value = 'Shows warframe builds')
-    embed.add_field(name = '.help', value = 'Shows this command')
-    await ctx.send(author, embed = embed)
+    embed.set_author(name = 'Help Commands!\nWeapon commands coming soon!')
+    embed.add_field(name = '.frame <warframe>', value = 'Shows warframe builds', inline = False)
+    embed.add_field(name = '.help', value = 'Shows this command', inline = False)
+    await ctx.send(embed = embed)
 
 #PREFIX COMMANDS
 @client.event
@@ -98,7 +97,7 @@ async def prefix(ctx, prefix):
 
     prefixes[str(ctx.guild.id)] = prefix
     embed = discord.Embed(
-    title = ':white_check_mark: Success!',
+    title = ':white_check_mark: Successful!',
     description = f'Your prefix has been changed to `{prefix}`',
     color = discord.Color.magenta()
     )
