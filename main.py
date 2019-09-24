@@ -15,7 +15,7 @@ async def on_ready():
     print('Bot is ready.')
     await client.change_presence(status = discord.Status.online, activity = discord.Game('.help'))
 
-#Core frame
+#Core frame, modset
 @client.command()
 async def frame(ctx, *, frame):
     frame = frame.lower()
@@ -54,10 +54,38 @@ async def frame(ctx, *, frame):
                     embed.set_footer(text = 'Suggestions at warframeclixbot@gmail.com!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
                     await ctx.send(embed = embed)
 
+@client.command()
+async def modset(ctx, *, set_name):
+    set_name = set_name.lower()
+
+    with open ('modset.json', 'r') as f:
+        modsets = json.load(f)
+
+    for item in modsets:
+        for set in item:
+            if set == set_name:
+                build = item[set_name].split('/')
+                build_file = build[-1]
+                build_name = build_file[:-4]
+                build_name = build_name.replace('_', ' ')
+
+                embed = discord.Embed(color = discord.Color.greyple())
+                embed.set_author(name = build_name.upper(), icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
+                embed.set_image(url = item[set_name])
+                embed.add_field(name = 'Set Bonus:', value = item['bonus'])
+                embed.set_footer(text = 'Suggestions at warframeclixbot@gmail.com!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
+                await ctx.send(embed = embed)
+
 @frame.error
 async def frame_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        embed = discord.Embed(title = ':x: Unsuccessful!', description = 'Please specify warframe', color = discord.Color.blurple())
+        embed = discord.Embed(title = ':x: Unsuccessful!', description = 'Please specify a warframe.', color = discord.Color.blurple())
+        await ctx.send(embed = embed)
+
+@modset.error
+async def modset_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        embed = discord.Embed(title = ':x: Unsuccessful!', description = 'Please specify a modset.', color = discord.Color.blurple())
         await ctx.send(embed = embed)
 
 @client.command(pass_context = True)
