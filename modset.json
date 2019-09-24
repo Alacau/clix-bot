@@ -1,0 +1,66 @@
+[
+  {
+    "augur": "https://cdn.discordapp.com/attachments/624081665580335105/625933498594885642/augur_set.png",
+    "bonus": "40%/80%/120%/160%/200%/240% Energy spent on abilities is converted to shields"
+  },
+
+  {
+    "gladiator": "https://cdn.discordapp.com/attachments/624081665580335105/625933833996337162/gladiator_set.png",
+    "bonus": "+15%/+30%/+45%/+60%/+75%/+90% critical chance, stacks with Melee Combo Multiplier."
+  },
+
+  {
+    "vigilante": "https://cdn.discordapp.com/attachments/624081665580335105/625934710480175124/vigilante_set.png",
+    "bonus": "5%/10%/15%/20%/25%/30% chance to enhance Critical Hits from Primary Weapons"
+  },
+
+  {
+    "hunter": "https://cdn.discordapp.com/attachments/624081665580335105/625935117260423168/hunter_set.png",
+    "bonus": "25%/50%/75%/100%/125%/150% Extra Damage against enemies affected by Slash status."
+  },
+
+  {
+    "umbral": "https://cdn.discordapp.com/attachments/624081665580335105/625933486246854656/umbral_set.png",
+    "bonus": "With 2 equipped - increases the effects of Umbral Vitality, Umbral Fiber and Umbral Intensify by 25%.\n \nWith 3 equipped - increases the effects of Umbral Vitality and Umbral Fiber by 75%, and Umbral Intensify by 50%."
+  },
+
+  {
+    "sacrificial": "https://cdn.discordapp.com/attachments/624081665580335105/625935550725095424/sacrificial_set.png",
+    "bonus": "Increases the effects of both mods by 25% when both are equipped together."
+  },
+
+  {
+    "tek": "https://cdn.discordapp.com/attachments/624081665580335105/625935995316994049/tek_set.png",
+    "bonus": "Kavat marks a 3/6/9/12 meter zone every 60/45/30/15 seconds that inflicts 50/100/150/200 Damage per second to enemies within the zone."
+  },
+
+  {
+    "synth": "https://cdn.discordapp.com/attachments/624081665580335105/625936386880700436/synth_set.png",
+    "bonus": "Reloads 5%/10%/15%/20% of Primary and Secondary weapon magazine per second while that weapon is holstered."
+  },
+
+  {
+    "mecha": "https://cdn.discordapp.com/attachments/624081665580335105/625936705161265162/mecha_set.png",
+    "bonus": "Kubrow marks an enemy every 60/45/30/15 seconds for 3/6/9/12 seconds. Kill them to apply their Status Effects to all enemies within 7.5/15/22.5/30 meters."
+  },
+
+  {
+    "strain": "https://cdn.discordapp.com/attachments/624081665580335105/625937242946535444/strain_set.png",
+    "bonus": "Helminth Charger grows up to 2/4/6/8 Cysts over 6/12/18/24 seconds that erupt every 25 seconds to spawn a maggot."
+  },
+
+  {
+    "aero": "https://cdn.discordapp.com/attachments/624081665580335105/625937703363411978/aero_set.png",
+    "bonus": " Damage enemies while aim gliding and put up to 5 of them to Sleep for 3/6/9s on landing."
+  },
+
+  {
+    "motus": "https://cdn.discordapp.com/attachments/624081665580335105/625938032930848768/motus_set.png",
+    "bonus": "+33/66/100% chance to become immune to Knockdown effects while airborne."
+  },
+
+  {
+    "proton": "https://cdn.discordapp.com/attachments/624081665580335105/625938251923980288/proton_set.png",
+    "bonus": "During a Wall Latch gain +17/33/50% Damage Reduction."
+  }
+]
