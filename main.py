@@ -15,19 +15,13 @@ async def on_ready():
     print('Bot is ready.')
     await client.change_presence(status = discord.Status.online, activity = discord.Game('.help'))
 
-#TESTING AREA
-@client.command()
-async def test():
-    pass
-#TESTING AREA
-
-#Core to organize into cog: frame
+#Core frame
 @client.command()
 async def frame(ctx, *, frame):
     frame = frame.lower()
 
-    with open('warframes.json', 'r') as g:
-        warframes = json.load(g)
+    with open('warframes.json', 'r') as f:
+        warframes = json.load(f)
 
     for item in warframes:
         for key in item:
@@ -60,10 +54,15 @@ async def frame(ctx, *, frame):
                     embed.set_footer(text = 'Suggestions at warframeclixbot@gmail.com!', icon_url = 'https://cdn.discordapp.com/attachments/620077247516377100/623690064525787146/pug.jpg')
                     await ctx.send(embed = embed)
 
+@frame.error
+async def frame_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        embed = discord.Embed(title = ':x: Unsuccessful!', description = 'Please specify warframe', color = discord.Color.blurple())
+        await ctx.send(embed = embed)
+
 @client.command(pass_context = True)
 async def help(ctx):
     embed = discord.Embed(color = discord.Color.magenta())
-
     embed.set_author(name = 'Help Commands!\nWeapon commands coming soon!')
     embed.add_field(name = '.frame <warframe>', value = 'Shows warframe builds', inline = False)
     embed.add_field(name = '.help', value = 'Shows this command', inline = False)
