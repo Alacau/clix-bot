@@ -2,12 +2,7 @@ import discord
 from discord.ext import commands
 import json
 
-def get_prefix(client, message):
-    with open('prefixes.json', 'r') as f:
-        prefixes = json.load(f)
-        return prefixes[str(message.guild.id)]
-
-client = commands.Bot(command_prefix = get_prefix)
+client = commands.Bot(command_prefix = ".")
 client.remove_command('help')
 
 @client.event
@@ -154,22 +149,5 @@ async def on_guild_remove(guild):
 
     with open('prefixes.json', 'w') as f:
         json.dump(prefixes, f, indent = 4)
-
-@client.command()
-async def prefix(ctx, prefix):
-    with open('prefixes.json', 'r') as f:
-        prefixes = json.load(f)
-
-    prefixes[str(ctx.guild.id)] = prefix
-    embed = discord.Embed(
-    title = ':white_check_mark: Successful!',
-    description = f'Your prefix has been changed to `{prefix}`',
-    color = discord.Color.magenta()
-    )
-
-    with open('prefixes.json', 'w') as f:
-        json.dump(prefixes, f, indent = 4)
-
-    await ctx.send(embed = embed)
 
 client.run('TOKEN')
